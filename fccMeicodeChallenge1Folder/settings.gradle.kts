@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "fccMeicodeChallenge1"
 include(":app")
- 
