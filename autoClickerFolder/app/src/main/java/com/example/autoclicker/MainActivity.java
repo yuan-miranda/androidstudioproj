@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         motionEvent.recycle();
     }
 
+    // miscellaneous function, im just testing the KeyEvent
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
