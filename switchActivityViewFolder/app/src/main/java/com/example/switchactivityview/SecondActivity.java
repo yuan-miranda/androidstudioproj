@@ -15,8 +15,7 @@ public class SecondActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.btnSwitchActivityMain);
 
         btn.setOnClickListener(v -> {
-            Intent intent = new Intent(SecondActivity.this, MainActivity.class);
-            startActivity(intent);
+            finish();
         });
     }
 }
