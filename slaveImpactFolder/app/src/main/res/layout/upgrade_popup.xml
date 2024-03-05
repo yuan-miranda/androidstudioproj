@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/upsChImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/upsChName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/upsChImg"
+        app:layout_constraintEnd_toEndOf="@+id/upsChImg"
+        app:layout_constraintStart_toStartOf="@+id/upsChImg" />
+
+    <Button
+        android:id="@+id/upsUpgradeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="upgrade"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/upsUpgradeCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="cost"
+        app:layout_constraintEnd_toEndOf="@+id/upsUpgradeBtn"
+        app:layout_constraintStart_toStartOf="@+id/upsUpgradeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/upsUpgradeBtn" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="lv.0"
+        app:layout_constraintEnd_toEndOf="@+id/upsChImg"
+        app:layout_constraintStart_toStartOf="@+id/upsChImg"
+        app:layout_constraintTop_toBottomOf="@+id/upsChImg" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/aether"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

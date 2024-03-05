@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/hsChName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="name"
+        app:layout_constraintBottom_toTopOf="@+id/hsChAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/hsChAvatar"
+        app:layout_constraintStart_toStartOf="@+id/hsChAvatar" />
+
+    <ImageView
+        android:id="@+id/hsChAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blank" />
+
+    <TextView
+        android:id="@+id/hsChLv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="lv.0"
+        app:layout_constraintEnd_toEndOf="@+id/hsChAvatar"
+        app:layout_constraintStart_toStartOf="@+id/hsChAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/hsChAvatar" />
+
+    <Button
+        android:id="@+id/hsUpgradeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:text="upgrade"
+        app:layout_constraintEnd_toStartOf="@+id/hsSellBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/hsChAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/hsChLv" />
+
+    <Button
+        android:id="@+id/hsSellBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="sell"
+        app:layout_constraintBottom_toBottomOf="@+id/hsUpgradeBtn"
+        app:layout_constraintEnd_toEndOf="@+id/hsChAvatar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hsUpgradeBtn"
+        app:layout_constraintTop_toTopOf="@+id/hsUpgradeBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

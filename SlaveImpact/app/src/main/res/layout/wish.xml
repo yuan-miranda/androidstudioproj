@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/wishChSlot1"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="4dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/wishChSlot2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blank" />
+
+    <ImageView
+        android:id="@+id/wishChSlot2"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="4dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/wishChSlot1"
+        app:layout_constraintEnd_toStartOf="@+id/wishChSlot3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/wishChSlot1"
+        app:layout_constraintTop_toTopOf="@+id/wishChSlot1"
+        app:srcCompat="@drawable/blank" />
+
+    <ImageView
+        android:id="@+id/wishChSlot3"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="4dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/wishChSlot2"
+        app:layout_constraintEnd_toStartOf="@+id/wishChSlot4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/wishChSlot2"
+        app:layout_constraintTop_toTopOf="@+id/wishChSlot2"
+        app:srcCompat="@drawable/blank" />
+
+    <ImageView
+        android:id="@+id/wishChSlot4"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="4dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/wishChSlot3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/wishChSlot3"
+        app:layout_constraintTop_toTopOf="@+id/wishChSlot3"
+        app:srcCompat="@drawable/blank" />
+
+<!--    LMAO-->
+    <Button
+        android:id="@+id/wishWishBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="wish"
+        app:layout_constraintEnd_toEndOf="@+id/wishChSlot4"
+        app:layout_constraintStart_toStartOf="@+id/wishChSlot1"
+        app:layout_constraintTop_toBottomOf="@+id/wishChSlot1" />
+
+    <TextView
+        android:id="@+id/wishCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="cost"
+        app:layout_constraintEnd_toEndOf="@+id/wishWishBtn"
+        app:layout_constraintStart_toStartOf="@+id/wishWishBtn"
+        app:layout_constraintTop_toBottomOf="@+id/wishWishBtn" />
+
+    <TextView
+        android:id="@+id/wishPrimogemDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/wishChSlot4"
+        app:layout_constraintEnd_toEndOf="@+id/wishChSlot4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <Button
+        android:id="@+id/wishBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

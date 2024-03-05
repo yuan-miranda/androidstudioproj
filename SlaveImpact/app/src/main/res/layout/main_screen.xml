@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/primogemDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.306" />
+
+    <Button
+        android:id="@+id/tapBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/roundbutton_light"
+        android:text="tap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/chSlot1"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chSlot2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primogemDisplay"
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@drawable/blank" />
+
+    <ImageButton
+        android:id="@+id/chSlot2"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/chSlot1"
+        app:layout_constraintEnd_toStartOf="@+id/chSLot3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chSlot1"
+        app:layout_constraintTop_toTopOf="@+id/chSlot1"
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@drawable/blank" />
+
+    <ImageButton
+        android:id="@+id/chSLot3"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/chSlot2"
+        app:layout_constraintEnd_toStartOf="@+id/chSlot4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chSlot2"
+        app:layout_constraintTop_toTopOf="@+id/chSlot2"
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@drawable/blank" />
+
+    <ImageButton
+        android:id="@+id/chSlot4"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/chSLot3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chSLot3"
+        app:layout_constraintTop_toTopOf="@+id/chSLot3"
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@drawable/blank" />
+
+    <TextView
+        android:id="@+id/chLvSlot1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:gravity="center"
+        android:text="lv.0"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/chLvSlot2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chSlot1" />
+
+    <TextView
+        android:id="@+id/chLvSlot2"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:gravity="center"
+        android:text="lv.0"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/chLvSlot3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chLvSlot1"
+        app:layout_constraintTop_toBottomOf="@+id/chSlot2" />
+
+    <TextView
+        android:id="@+id/chLvSlot3"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:gravity="center"
+        android:text="lv.0"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/chLvSlot4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chLvSlot2"
+        app:layout_constraintTop_toBottomOf="@+id/chSLot3" />
+
+    <TextView
+        android:id="@+id/chLvSlot4"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:gravity="center"
+        android:text="lv.0"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chLvSlot3"
+        app:layout_constraintTop_toBottomOf="@+id/chSlot4" />
+
+    <Button
+        android:id="@+id/invBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="inventory"
+        app:layout_constraintBottom_toBottomOf="@+id/wishBtn"
+        app:layout_constraintEnd_toStartOf="@+id/wishBtn"
+        app:layout_constraintTop_toTopOf="@+id/wishBtn" />
+
+    <Button
+        android:id="@+id/wishBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="wish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
