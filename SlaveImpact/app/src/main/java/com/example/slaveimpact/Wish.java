@@ -2,7 +2,6 @@ package com.example.slaveimpact;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +13,7 @@ public class Wish extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wish);
 
+        Object[][] chData = (Object[][]) getIntent().getSerializableExtra("chData");
         Button backBtn = findViewById(R.id.wishBackBtn);
         Button wishBtn = findViewById(R.id.wishWishBtn);
         TextView primogemDisplay = findViewById(R.id.wishPrimogemDisplay);
@@ -23,10 +23,10 @@ public class Wish extends AppCompatActivity {
         ImageView wishChSlot3 = findViewById(R.id.wishChSlot3);
         ImageView wishChSlot4 = findViewById(R.id.wishChSlot4);
 
-        wishChSlot1.setImageResource(getResources().getIdentifier(String.valueOf(GlobalValues.avatar), "drawable", getPackageName()));
-        wishChSlot2.setImageResource(getResources().getIdentifier(String.valueOf(GlobalValues.avatar), "drawable", getPackageName()));
-        wishChSlot3.setImageResource(getResources().getIdentifier(String.valueOf(GlobalValues.avatar), "drawable", getPackageName()));
-        wishChSlot4.setImageResource(getResources().getIdentifier(String.valueOf(GlobalValues.avatar), "drawable", getPackageName()));
+        wishChSlot1.setImageResource(getResources().getIdentifier(String.valueOf(chData[0][4]), "drawable", getPackageName()));
+        wishChSlot2.setImageResource(getResources().getIdentifier(String.valueOf(chData[1][4]), "drawable", getPackageName()));
+        wishChSlot3.setImageResource(getResources().getIdentifier(String.valueOf(chData[2][4]), "drawable", getPackageName()));
+        wishChSlot4.setImageResource(getResources().getIdentifier(String.valueOf(chData[3][4]), "drawable", getPackageName()));
 
         primogemDisplay.setText(String.valueOf(GlobalValues.primogems));
 

@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
+
 public class MainScreen extends AppCompatActivity {
     private int primogems = 0;
     private Object[][] chData;
@@ -38,11 +40,53 @@ public class MainScreen extends AppCompatActivity {
 
         primogemDisplay.setText(String.valueOf(primogems));
 
-        GlobalValues.avatar = chData[0][4];
-        chSlot1.setImageResource(getResources().getIdentifier(String.valueOf(GlobalValues.avatar), "drawable", getPackageName()));
-        chSlot2.setImageResource(getResources().getIdentifier(String.valueOf("yelan_icon"), "drawable", getPackageName()));
-        chSlot3.setImageResource(getResources().getIdentifier(String.valueOf("nahida_icon"), "drawable", getPackageName()));
-        chSlot4.setImageResource(getResources().getIdentifier(String.valueOf("xiao_icon"), "drawable", getPackageName()));
+        chData[10][3] = 3;
+        chData[10][4] = "ningguang_icon";
+        chData[10][1] = 20;
+
+        chData[15][3] = 1;
+        chData[15][4] = "raiden_shogun_icon";
+        chData[15][1] = 69;
+
+        chData[20][3] = 2;
+        chData[20][4] = "nahida_icon";
+        chData[20][1] = 4;
+
+        chData[30][3] = 4;
+        chData[30][4] = "aether_icon";
+        chData[30][1] = 4;
+
+        chData = LoadData.getInstance().sortChData(chData);
+        LoadData.getInstance().saveCharacterData(chData);
+
+        GlobalValues.setMainScreenInstance(this);
+
+        chLvSlot1.setText("lv. " + chData[0][1]);
+        chLvSlot2.setText("lv. " + chData[1][1]);
+        chLvSlot3.setText("lv. " + chData[2][1]);
+        chLvSlot4.setText("lv. " + chData[3][1]);
+
+        chSlot1.setImageResource(getResources().getIdentifier(String.valueOf(chData[0][4]), "drawable", getPackageName()));
+        chSlot2.setImageResource(getResources().getIdentifier(String.valueOf(chData[1][4]), "drawable", getPackageName()));
+        chSlot3.setImageResource(getResources().getIdentifier(String.valueOf(chData[2][4]), "drawable", getPackageName()));
+        chSlot4.setImageResource(getResources().getIdentifier(String.valueOf(chData[3][4]), "drawable", getPackageName()));
+
+        chSlot1.setOnClickListener(v -> HeroSelectPopup.startPopup(this, chData, 0, () -> {
+            chSlot1.setImageResource(getResources().getIdentifier(String.valueOf(chData[0][4]), "drawable", getPackageName()));
+            chLvSlot1.setText("lv. " + chData[0][1]);
+        }));
+        chSlot2.setOnClickListener(v -> HeroSelectPopup.startPopup(this, chData, 1, () -> {
+            chSlot2.setImageResource(getResources().getIdentifier(String.valueOf(chData[1][4]), "drawable", getPackageName()));
+            chLvSlot2.setText("lv. " + chData[1][1]);
+        }));
+        chSlot3.setOnClickListener(v -> HeroSelectPopup.startPopup(this, chData, 2, () -> {
+            chSlot3.setImageResource(getResources().getIdentifier(String.valueOf(chData[2][4]), "drawable", getPackageName()));
+            chLvSlot3.setText("lv. " + chData[2][1]);
+        }));
+        chSlot4.setOnClickListener(v -> HeroSelectPopup.startPopup(this, chData, 3, () -> {
+            chSlot4.setImageResource(getResources().getIdentifier(String.valueOf(chData[3][4]), "drawable", getPackageName()));
+            chLvSlot4.setText("lv. " + chData[3][1]);
+        }));
 
         tapBtn.setOnClickListener(v -> {
             primogems++;
@@ -50,50 +94,27 @@ public class MainScreen extends AppCompatActivity {
         });
 
         invBtn.setOnClickListener(v -> {
-            GlobalValues.avatar = chData[0][4];
+            // TODO: Update the main screen slot when selling on inventory. Dismiss Callback?
             Intent intent = new Intent(MainScreen.this, Inventory.class);
+            intent.putExtra("chData", chData);
             startActivity(intent);
         });
         wishBtn.setOnClickListener(v -> {
             GlobalValues.primogems = primogems;
-            GlobalValues.avatar = chData[0][4];
             Intent intent = new Intent(MainScreen.this, Wish.class);
+            intent.putExtra("chData", chData);
             startActivity(intent);
         });
 
-        // TODO: finish the loading of character each in inventory?
-        chSlot1.setOnClickListener(v -> {
-            GlobalValues.name = chData[0][0];
-            GlobalValues.level = chData[0][1];
-            GlobalValues.avatar = chData[0][4];
-            HeroSelectPopup.startPopup(this);
 
-        });
-        chSlot2.setOnClickListener(v -> {
-            GlobalValues.name = chData[1][0];
-            GlobalValues.level = chData[1][1];
-//            GlobalValues.avatar = chData[1][4];
-            GlobalValues.avatar = "yelan_icon";
-            HeroSelectPopup.startPopup(this);
-        });
-        chSlot3.setOnClickListener(v -> {
-            GlobalValues.name = chData[2][0];
-            GlobalValues.level = chData[2][1];
-//            GlobalValues.avatar = chData[2][4];
-            GlobalValues.avatar = "nahida_icon";
-            HeroSelectPopup.startPopup(this);
-        });
-        chSlot4.setOnClickListener(v -> {
-            GlobalValues.name = chData[3][0];
-            GlobalValues.level = chData[3][1];
-//            GlobalValues.avatar = chData[3][4];
-            GlobalValues.avatar = "xiao_icon";
-            HeroSelectPopup.startPopup(this);
-        });
 
-        chLvSlot1.setText("lv. " + String.valueOf(chData[0][1]));
-        chLvSlot2.setText("lv. " + String.valueOf(chData[1][1]));
-        chLvSlot3.setText("lv. " + String.valueOf(chData[2][1]));
-        chLvSlot4.setText("lv. " + String.valueOf(chData[3][1]));
+
     }
+
+    public void updateCharacterData(Object[] newData, int index) {
+        chData[index] = newData;
+        // TODO: This is not working.
+        LoadData.getInstance().saveCharacterData(chData);
+    }
+
 }

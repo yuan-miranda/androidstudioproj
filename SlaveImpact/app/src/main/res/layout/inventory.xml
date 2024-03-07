@@ -33,6 +33,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -42,6 +43,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -51,6 +53,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -60,6 +63,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -69,6 +73,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -78,6 +83,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
         </LinearLayout>
 
@@ -95,6 +101,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -104,6 +111,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -113,6 +121,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -122,6 +131,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -131,6 +141,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -140,6 +151,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
         </LinearLayout>
 
@@ -157,6 +169,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -166,6 +179,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -175,6 +189,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -184,6 +199,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -193,6 +209,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -202,6 +219,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
         </LinearLayout>
 
@@ -219,6 +237,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -228,6 +247,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -237,6 +257,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -246,6 +267,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -255,6 +277,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -264,6 +287,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
         </LinearLayout>
 
@@ -281,6 +305,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -290,6 +315,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -299,6 +325,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -308,6 +335,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -317,6 +345,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -326,6 +355,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
         </LinearLayout>
 
@@ -343,6 +373,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -352,6 +383,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -361,6 +393,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -370,6 +403,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -379,6 +413,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
 
             <ImageButton
@@ -388,6 +423,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/blank" />
         </LinearLayout>
     </LinearLayout>

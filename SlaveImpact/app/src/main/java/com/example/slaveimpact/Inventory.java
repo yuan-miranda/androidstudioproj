@@ -2,6 +2,7 @@ package com.example.slaveimpact;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -15,32 +16,25 @@ public class Inventory extends AppCompatActivity {
         setContentView(R.layout.inventory);
 
         Button backBtn = findViewById(R.id.invBackBtn);
-
-        backBtn.setOnClickListener(v -> {
-            finish();
-        });
-
+        Object[][] chData = (Object[][]) getIntent().getSerializableExtra("chData");
         ImageButton[] chSlots = new ImageButton[36];
 
-        // set id.
+        backBtn.setOnClickListener(v -> finish());
+
+
         for (int i = 0; i < 36; i++) {
+            // set id.
             int resId = getResources().getIdentifier("invChSlot" + (i + 1), "id", getPackageName());
             chSlots[i] = findViewById(resId);
-        }
 
-        // set value of each slot.
-        for (int i = 0; i < 36; i++) {
+            // set avatars
+            chSlots[i].setImageResource(getResources().getIdentifier(String.valueOf(chData[i][4]), "drawable", getPackageName()));
+
+            // set value of each slot.
             int finalI = i;
-            chSlots[i].setOnClickListener(v -> {
-                GlobalValues.name = GlobalValues.characterData[finalI][0];
-                GlobalValues.level = GlobalValues.characterData[finalI][1];
-                HeroSelectPopup.startPopup(this);
-            });
-        }
-
-        // TODO: Set avatar?
-        for (int i = 0; i < 36; i++) {
-            chSlots[i].setImageResource(getResources().getIdentifier(String.valueOf(GlobalValues.avatar), "drawable", getPackageName()));
+            chSlots[i].setOnClickListener(v -> HeroSelectPopup.startPopup(this, chData, finalI, () -> {
+                chSlots[finalI].setImageResource(getResources().getIdentifier(String.valueOf(chData[finalI][4]), "drawable", getPackageName()));
+            }));
         }
     }
 }

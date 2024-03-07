@@ -1,9 +1,18 @@
 package com.example.slaveimpact;
 
+import android.graphics.drawable.Drawable;
+
 public class GlobalValues {
-    public static Object[][] characterData = new Object[36][5];
     public static Object name;
     public static Object level;
-    public static Object avatar;
+    public static Drawable avatar;
     public static int primogems;
+    public static MainScreen mainScreenInstance;
+
+    public static MainScreen getMainScreenInstance() {
+        return mainScreenInstance;
+    }
+    public static void setMainScreenInstance(MainScreen mainScreenInstance) {
+        GlobalValues.mainScreenInstance = mainScreenInstance;
+    }
 }
