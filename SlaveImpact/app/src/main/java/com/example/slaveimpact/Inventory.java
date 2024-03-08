@@ -21,7 +21,6 @@ public class Inventory extends AppCompatActivity {
 
         backBtn.setOnClickListener(v -> finish());
 
-
         for (int i = 0; i < 36; i++) {
             // set id.
             int resId = getResources().getIdentifier("invChSlot" + (i + 1), "id", getPackageName());

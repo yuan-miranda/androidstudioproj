@@ -24,7 +24,9 @@ public class LoadData {
     }
 
     Object[][] sortChData(Object[][] chData) {
-        Arrays.sort(chData, (Object[] o1, Object[] o2) -> {
+        // sort characters that has the priority number of 1-4 at index 3.
+        // non zero number means active character but max is 4.
+        Arrays.sort(chData, (o1, o2) -> {
             Integer num1 = (Integer) o1[3];
             Integer num2 = (Integer) o2[3];
             if (num1 == 0 && num2 == 0) return 0;
@@ -32,17 +34,34 @@ public class LoadData {
             if (num2 == 0) return -1;
             return num1.compareTo(num2);
         });
+        // find the first occurrence of 0 in range of < 5.
+        // 0 means inactive character.
+        int highest = 0;
+        for(int i = 0; i < 5; i++) {
+            if ((int) chData[i][3] == 0) {
+                System.out.println("Highest: " + i);
+                highest = i;
+                break;
+            }
+        }
+        // sort the rest of the characters in alphabetical order.
+        Arrays.sort(chData, highest, chData.length, (o1, o2) -> {
+            String str1 = (String) o1[0];
+            String str2 = (String) o2[0];
+            return str1.compareTo(str2);
+        });
         return chData;
     }
 
-    void saveCharacterData(Object[][] charactersData) {
-        try (FileOutputStream fos = new FileOutputStream("characters.dat", false);
+    void saveCharacterData(Context context, Object[][] charactersData) {
+        try (FileOutputStream fos = context.openFileOutput("characters.dat", Context.MODE_PRIVATE);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(charactersData);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     void savePrimogems(Context context, int value) {
         try (FileOutputStream fos = context.openFileOutput("primogems.dat", Context.MODE_PRIVATE);
@@ -60,12 +79,14 @@ public class LoadData {
             tempData = (Object[][]) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             tempData = new Object[36][5];
+            // default character
+            tempData[0] = new Object[]{"Aether", 0, 0.0, 1, "aether_icon"};
             // generate all the character slots.
-            for (int i = 0; i < 36; i++) {
-                tempData[i] = new Object[]{"name_here", 0, 0.0, 0, "xiao_icon"};
+            for (int i = 1; i < 36; i++) {
+                tempData[i] = new Object[]{"", 0, 0.0, 0, "blank"};
             }
             // save the data just in case something sus happens.
-            saveCharacterData(tempData);
+            saveCharacterData(context, tempData);
         }
         // return the data
         return Arrays.copyOf(tempData, tempData.length);

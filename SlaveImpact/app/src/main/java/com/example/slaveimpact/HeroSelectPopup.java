@@ -27,19 +27,15 @@ public class HeroSelectPopup {
 
         AlertDialog dialog = builder.setView(view).create();
 
-        upgradeBtn.setOnClickListener(v -> {
-            UpgradePopup.startPopup(context, chData[index], index, () -> {
-                chLv.setText(String.valueOf(chData[index][1]));
-                callback.run();
-            });
-        });
+        upgradeBtn.setOnClickListener(v -> UpgradePopup.startPopup(context, chData[index], index, () -> {
+            chLv.setText(String.valueOf(chData[index][1]));
+            callback.run();
+        }));
 
-        sellBtn.setOnClickListener(v -> {
-            SellPopup.startPopup(context, chData[index], index, () -> {
-                callback.run();
-                dialog.dismiss();
-            });
-        });
+        sellBtn.setOnClickListener(v -> SellPopup.startPopup(context, chData[index], index, () -> {
+            callback.run();
+            dialog.dismiss();
+        }));
 
         dialog.setOnDismissListener(dialogInterface -> {
             callback.run();

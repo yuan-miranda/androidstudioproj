@@ -2,10 +2,12 @@ package com.example.slaveimpact;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
@@ -25,6 +27,14 @@ public class MainScreen extends AppCompatActivity {
 
         TextView primogemDisplay = findViewById(R.id.primogemDisplay);
 
+        // TODO: Make setEnable for each slots, hide also the lv display.
+
+        primogems = LoadData.getInstance().loadPrimogems(this);
+        chData = LoadData.getInstance().loadCharacterData(this);
+        chData = LoadData.getInstance().sortChData(chData);
+        LoadData.getInstance().saveCharacterData(this, chData);
+        GlobalValues.setMainScreenInstance(this);
+
         ImageButton chSlot1 = findViewById(R.id.chSlot1);
         ImageButton chSlot2 = findViewById(R.id.chSlot2);
         ImageButton chSlot3 = findViewById(R.id.chSLot3);
@@ -34,32 +44,6 @@ public class MainScreen extends AppCompatActivity {
         TextView chLvSlot2 = findViewById(R.id.chLvSlot2);
         TextView chLvSlot3 = findViewById(R.id.chLvSlot3);
         TextView chLvSlot4 = findViewById(R.id.chLvSlot4);
-
-        primogems = LoadData.getInstance().loadPrimogems(this);
-        chData = LoadData.getInstance().loadCharacterData(this);
-
-        primogemDisplay.setText(String.valueOf(primogems));
-
-        chData[10][3] = 3;
-        chData[10][4] = "ningguang_icon";
-        chData[10][1] = 20;
-
-        chData[15][3] = 1;
-        chData[15][4] = "raiden_shogun_icon";
-        chData[15][1] = 69;
-
-        chData[20][3] = 2;
-        chData[20][4] = "nahida_icon";
-        chData[20][1] = 4;
-
-        chData[30][3] = 4;
-        chData[30][4] = "aether_icon";
-        chData[30][1] = 4;
-
-        chData = LoadData.getInstance().sortChData(chData);
-        LoadData.getInstance().saveCharacterData(chData);
-
-        GlobalValues.setMainScreenInstance(this);
 
         chLvSlot1.setText("lv. " + chData[0][1]);
         chLvSlot2.setText("lv. " + chData[1][1]);
@@ -88,6 +72,8 @@ public class MainScreen extends AppCompatActivity {
             chLvSlot4.setText("lv. " + chData[3][1]);
         }));
 
+        primogemDisplay.setText(String.valueOf(primogems));
+
         tapBtn.setOnClickListener(v -> {
             primogems++;
             primogemDisplay.setText(String.valueOf(primogems));
@@ -105,16 +91,9 @@ public class MainScreen extends AppCompatActivity {
             intent.putExtra("chData", chData);
             startActivity(intent);
         });
-
-
-
-
     }
-
     public void updateCharacterData(Object[] newData, int index) {
         chData[index] = newData;
-        // TODO: This is not working.
-        LoadData.getInstance().saveCharacterData(chData);
+        LoadData.getInstance().saveCharacterData(this, chData);
     }
-
 }
