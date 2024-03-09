@@ -1,5 +1,6 @@
 package com.example.slaveimpact;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,8 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Arrays;
 
 public class MainScreen extends AppCompatActivity {
+    private static final int REQUEST_CODE = 1;
     private int primogems = 0;
     private Object[][] chData;
+
+    ImageButton chSlot1;
+    ImageButton chSlot2;
+    ImageButton chSlot3;
+    ImageButton chSlot4;
+
+    TextView chLvSlot1;
+    TextView chLvSlot2;
+    TextView chLvSlot3;
+    TextView chLvSlot4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +47,15 @@ public class MainScreen extends AppCompatActivity {
         LoadData.getInstance().saveCharacterData(this, chData);
         GlobalValues.setMainScreenInstance(this);
 
-        ImageButton chSlot1 = findViewById(R.id.chSlot1);
-        ImageButton chSlot2 = findViewById(R.id.chSlot2);
-        ImageButton chSlot3 = findViewById(R.id.chSLot3);
-        ImageButton chSlot4 = findViewById(R.id.chSlot4);
+        chSlot1 = findViewById(R.id.chSlot1);
+        chSlot2 = findViewById(R.id.chSlot2);
+        chSlot3 = findViewById(R.id.chSLot3);
+        chSlot4 = findViewById(R.id.chSlot4);
 
-        TextView chLvSlot1 = findViewById(R.id.chLvSlot1);
-        TextView chLvSlot2 = findViewById(R.id.chLvSlot2);
-        TextView chLvSlot3 = findViewById(R.id.chLvSlot3);
-        TextView chLvSlot4 = findViewById(R.id.chLvSlot4);
+        chLvSlot1 = findViewById(R.id.chLvSlot1);
+        chLvSlot2 = findViewById(R.id.chLvSlot2);
+        chLvSlot3 = findViewById(R.id.chLvSlot3);
+        chLvSlot4 = findViewById(R.id.chLvSlot4);
 
         chLvSlot1.setText("lv. " + chData[0][1]);
         chLvSlot2.setText("lv. " + chData[1][1]);
@@ -83,15 +95,34 @@ public class MainScreen extends AppCompatActivity {
             // TODO: Update the main screen slot when selling on inventory. Dismiss Callback?
             Intent intent = new Intent(MainScreen.this, Inventory.class);
             intent.putExtra("chData", chData);
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE);
         });
         wishBtn.setOnClickListener(v -> {
             GlobalValues.primogems = primogems;
             Intent intent = new Intent(MainScreen.this, Wish.class);
             intent.putExtra("chData", chData);
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE);
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                chLvSlot1.setText("lv. " + chData[0][1]);
+                chLvSlot2.setText("lv. " + chData[1][1]);
+                chLvSlot3.setText("lv. " + chData[2][1]);
+                chLvSlot4.setText("lv. " + chData[3][1]);
+
+                chSlot1.setImageResource(getResources().getIdentifier(String.valueOf(chData[0][4]), "drawable", getPackageName()));
+                chSlot2.setImageResource(getResources().getIdentifier(String.valueOf(chData[1][4]), "drawable", getPackageName()));
+                chSlot3.setImageResource(getResources().getIdentifier(String.valueOf(chData[2][4]), "drawable", getPackageName()));
+                chSlot4.setImageResource(getResources().getIdentifier(String.valueOf(chData[3][4]), "drawable", getPackageName()));
+            }
+        }
+    }
+
     public void updateCharacterData(Object[] newData, int index) {
         chData[index] = newData;
         LoadData.getInstance().saveCharacterData(this, chData);

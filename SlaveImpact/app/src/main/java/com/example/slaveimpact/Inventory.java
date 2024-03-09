@@ -18,6 +18,7 @@ public class Inventory extends AppCompatActivity {
         Button backBtn = findViewById(R.id.invBackBtn);
         Object[][] chData = (Object[][]) getIntent().getSerializableExtra("chData");
         ImageButton[] chSlots = new ImageButton[36];
+        Intent resultIntent = new Intent();
 
         backBtn.setOnClickListener(v -> finish());
 
@@ -33,6 +34,8 @@ public class Inventory extends AppCompatActivity {
             int finalI = i;
             chSlots[i].setOnClickListener(v -> HeroSelectPopup.startPopup(this, chData, finalI, () -> {
                 chSlots[finalI].setImageResource(getResources().getIdentifier(String.valueOf(chData[finalI][4]), "drawable", getPackageName()));
+                resultIntent.putExtra("chData", chData);
+                setResult(RESULT_OK, resultIntent);
             }));
         }
     }
