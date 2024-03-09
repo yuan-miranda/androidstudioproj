@@ -11,15 +11,12 @@ public class UpgradePopup {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.upgrade_popup, null);
 
-        builder.setTitle("Upgrade Hero").setMessage("This would upgrade " + chData[0] + " to " + ((int) chData[1] + 1))
-                .setPositiveButton("Continue", (dialog, which) -> {
-                    chData[1] = (int) chData[1] + 1;
-                    GlobalValues.getMainScreenInstance().updateCharacterData(chData, index);
-                    callback.run();
-                })
-                .setNegativeButton("Cancel", (dialog, which) -> {
-
-                });
+        builder.setTitle("Upgrade Hero").setMessage("This would upgrade " + chData[0] + " to " + ((int) chData[1] + 1)).setPositiveButton("Continue", (dialog, which) -> {
+            chData[1] = (int) chData[1] + 1;
+            GlobalValues.getMainScreenInstance().updateCharacterData(chData, index);
+            callback.run();
+        }).setNegativeButton("Cancel", (dialog, which) -> {
+        });
 
         builder.setView(view);
         AlertDialog dialog = builder.create();

@@ -2,7 +2,6 @@ package com.example.slaveimpact;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -15,12 +14,11 @@ public class Inventory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory);
 
-        Button backBtn = findViewById(R.id.invBackBtn);
         Object[][] chData = (Object[][]) getIntent().getSerializableExtra("chData");
-        ImageButton[] chSlots = new ImageButton[36];
         Intent resultIntent = new Intent();
 
-        backBtn.setOnClickListener(v -> finish());
+        Button backBtn = findViewById(R.id.invBackBtn);
+        ImageButton[] chSlots = new ImageButton[36];
 
         for (int i = 0; i < 36; i++) {
             // set id.
@@ -38,5 +36,6 @@ public class Inventory extends AppCompatActivity {
                 setResult(RESULT_OK, resultIntent);
             }));
         }
+        backBtn.setOnClickListener(v -> finish());
     }
 }

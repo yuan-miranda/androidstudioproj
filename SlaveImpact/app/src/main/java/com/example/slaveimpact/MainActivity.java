@@ -12,10 +12,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(MainActivity.this, MainScreen.class);
 
         Button playBtn = findViewById(R.id.playBtn);
+
         playBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainScreen.class);
             startActivity(intent);
         });
 

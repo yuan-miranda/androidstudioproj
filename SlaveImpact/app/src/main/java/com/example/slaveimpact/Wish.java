@@ -30,12 +30,9 @@ public class Wish extends AppCompatActivity {
 
         primogemDisplay.setText(String.valueOf(GlobalValues.primogems));
 
-        backBtn.setOnClickListener(v -> {
-            finish();
-        });
+        backBtn.setOnClickListener(v -> finish());
 
         wishBtn.setOnClickListener(v -> {
-            // do something
         });
 
 

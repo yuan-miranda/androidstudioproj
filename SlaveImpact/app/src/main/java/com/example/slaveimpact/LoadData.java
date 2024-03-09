@@ -37,7 +37,7 @@ public class LoadData {
         // find the first occurrence of 0 in range of < 5.
         // 0 means inactive character.
         int highest = 0;
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             if ((int) chData[i][3] == 0) {
                 System.out.println("Highest: " + i);
                 highest = i;
@@ -54,8 +54,7 @@ public class LoadData {
     }
 
     void saveCharacterData(Context context, Object[][] charactersData) {
-        try (FileOutputStream fos = context.openFileOutput("characters.dat", Context.MODE_PRIVATE);
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+        try (FileOutputStream fos = context.openFileOutput("characters.dat", Context.MODE_PRIVATE); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(charactersData);
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,8 +63,7 @@ public class LoadData {
 
 
     void savePrimogems(Context context, int value) {
-        try (FileOutputStream fos = context.openFileOutput("primogems.dat", Context.MODE_PRIVATE);
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+        try (FileOutputStream fos = context.openFileOutput("primogems.dat", Context.MODE_PRIVATE); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(value);
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,8 +72,7 @@ public class LoadData {
 
     Object[][] loadCharacterData(Context context) {
         Object[][] tempData;
-        try (FileInputStream fis = context.openFileInput("characters.dat");
-             ObjectInputStream ois = new ObjectInputStream(fis)) {
+        try (FileInputStream fis = context.openFileInput("characters.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
             tempData = (Object[][]) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             tempData = new Object[36][5];
@@ -94,8 +91,7 @@ public class LoadData {
 
     int loadPrimogems(Context context) {
         int primogems = 0;
-        try (FileInputStream fis = context.openFileInput("primogems.dat");
-             ObjectInputStream ois = new ObjectInputStream(fis)) {
+        try (FileInputStream fis = context.openFileInput("primogems.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
             primogems = (int) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             savePrimogems(context, primogems);
